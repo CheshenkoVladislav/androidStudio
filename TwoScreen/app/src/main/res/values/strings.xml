@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">twoScreen</string>
+    <string name="chooseFilm">Выберите фильм</string>
+    <string name="chooose">Сделать выбор</string>
+    <string name="film1">FIlm1</string>
+    <string name="film2">FIlm2</string>
+    <string name="film3">FIlm3</string>
+    <string name="changeValue">Подтвердить выбор</string>
+</resources>
