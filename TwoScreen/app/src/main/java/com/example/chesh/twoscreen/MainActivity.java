@@ -11,6 +11,8 @@ public class MainActivity extends AppCompatActivity {
     private TextView infoTextView;
     protected Button buttonChoose;
 
+    public int CHOOSE_FILM = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,9 +25,25 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent questionIntent = new Intent(MainActivity.this,ChoooseActivity.class);
+
+                startActivityForResult(questionIntent,CHOOSE_FILM);
             }
         });
 
 
+    }
+
+    @Override
+    public void onActivityReenter(int resultCode, Intent data) {
+        super.onActivityReenter(resultCode, data);
+
+        if(resultCode == CHOOSE_FILM){
+            if(resultCode == RESULT_OK){
+                String filmName = data.getStringExtra(ChoooseActivity.Film);
+                infoTextView.setText(filmName);
+            }  else {
+                infoTextView.setText("");
+            }
+        }
     }
 }
