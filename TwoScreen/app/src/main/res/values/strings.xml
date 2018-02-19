@@ -1,4 +1,5 @@
 <resources>
+    <string name="textViewerSecond"> </string>
     <string name="app_name">twoScreen</string>
     <string name="chooseFilm">Выберите фильм</string>
     <string name="chooose">Сделать выбор</string>
@@ -6,4 +7,6 @@
     <string name="film2">FIlm2</string>
     <string name="film3">FIlm3</string>
     <string name="changeValue">Подтвердить выбор</string>
+    <string name="zero">Film0</string>
+    <string name="badResult">Я зашел в цикл</string>
 </resources>

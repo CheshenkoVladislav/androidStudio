@@ -18,10 +18,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        infoTextView = (TextView) findViewById(R.id.textView);
-        buttonChoose = (Button) findViewById(R.id.chooseButton);
+        infoTextView = findViewById(R.id.textViewerSecond);
+        buttonChoose = findViewById(R.id.chooseButton);
 
-        buttonChoose.setOnClickListener(new View.OnClickListener() {
+        buttonChoose.setOnClickListener(
+                new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent questionIntent = new Intent(MainActivity.this,ChoooseActivity.class);
@@ -29,21 +30,16 @@ public class MainActivity extends AppCompatActivity {
                 startActivityForResult(questionIntent,CHOOSE_FILM);
             }
         });
-
-
     }
 
     @Override
-    public void onActivityReenter(int resultCode, Intent data) {
-        super.onActivityReenter(resultCode, data);
-
-        if(resultCode == CHOOSE_FILM){
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
             if(resultCode == RESULT_OK){
                 String filmName = data.getStringExtra(ChoooseActivity.Film);
                 infoTextView.setText(filmName);
             }  else {
-                infoTextView.setText("");
+                infoTextView.setText(R.string.zero);
             }
         }
     }
-}

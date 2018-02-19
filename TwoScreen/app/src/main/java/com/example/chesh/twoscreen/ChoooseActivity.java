@@ -1,6 +1,7 @@
 package com.example.chesh.twoscreen;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.support.annotation.Nullable;
@@ -28,9 +29,11 @@ public class ChoooseActivity extends AppCompatActivity {
         button = findViewById(R.id.changeValue);
 
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+
+            Intent answerIntent = new Intent();
+
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                final Intent answerIntent = new Intent();
 
                 switch (i){
                     case R.id.button1:
@@ -43,7 +46,7 @@ public class ChoooseActivity extends AppCompatActivity {
                         answerIntent.putExtra(Film,getResources().getString(R.string.film3));
                         break;
                     default:
-                        break;
+                        System.out.println(getString(R.string.badResult));
 
 
                 }
