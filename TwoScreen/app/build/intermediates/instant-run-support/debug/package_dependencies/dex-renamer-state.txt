@@ -1,0 +1,4 @@
+#Sun Feb 18 22:17:17 MSK 2018
+base.0=/home/vladislav/androidStudio/TwoScreen/app/build/intermediates/transforms/dexMerger/debug/10
+path.0=classes.dex
+renamed.0=classes.dex
